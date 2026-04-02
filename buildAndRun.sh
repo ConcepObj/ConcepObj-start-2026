@@ -4,5 +4,5 @@ rm -fR ./build
 #build all
 find . -name "*.java" -print | xargs javac -d ./build
 #run main
-java -cp ./build main.MainClass
+java -cp ./build main.Main
 

@@ -35,11 +35,24 @@ public class Array2Dprinter {
     }
 
     /**
+     * Build a grid string representation of a 2D list.
+     *
+     * @param list2d The 2D List to be printed. first dimension is the row (vertical), second dimension is the column (horizontal).
+     * @param highlightRow The row coordinate of the cell to be highlighted
+     * @param highlightColumn The column coordinate of the cell to be highlighted
+     * @return The grid string representation of the 2D array
+     */
+    public static String print2DList(List<? extends List<? extends IPrintable>> arrayList2D, int highlightRow, int highlightColumn) {
+        IPrintable[][] array2D = convert2DArray(arrayList2D);
+        return print2DArray(array2D, highlightRow, highlightColumn);
+    }
+
+    /**
      * Converts a 2D ArrayList of IPrintable objects to a 2D regular array [][].
      * @param arrayList2D The 2D list or ArrayList to convert
      * @return The converted 2D array
      */
-    public static IPrintable[][] convert2DArray(List<? extends List<? extends IPrintable>> arrayList2D) {
+    private static IPrintable[][] convert2DArray(List<? extends List<? extends IPrintable>> arrayList2D) {
         IPrintable[][] array2D = new IPrintable[arrayList2D.size()][];
         for (int y = 0; y < arrayList2D.size(); y++) {
             List<? extends IPrintable> row = arrayList2D.get(y);
